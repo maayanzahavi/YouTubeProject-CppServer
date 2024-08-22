@@ -1,5 +1,5 @@
-#include "server.h"
-#include "database.h"
+#include "../include/server.h"
+#include "../include/database.h"
 
 Database db;  // Global Database object
 

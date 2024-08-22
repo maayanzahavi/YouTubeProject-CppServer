@@ -1,5 +1,5 @@
-#include "server.h"
-#include "client_handler.h"
+#include "../include/server.h"
+#include "../include/client_handler.h"
 #include <iostream>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -25,7 +25,7 @@ void Server::start(int port) {
     sin.sin_port = htons(port);
 
     // Bind the socket to the specified port
-    if (bind(sock, (struct sockaddr*)&sin, sizeof(sin)) < 0) {
+    if (::bind(sock, (struct sockaddr*)&sin, sizeof(sin)) < 0) {
         perror("Error binding socket");
         close(sock);
         return;

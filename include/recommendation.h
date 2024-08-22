@@ -3,11 +3,12 @@
 
 #include <vector>
 #include <map>
+#include <string>
 
 class Recommendation {
 public:
     // Recommend videos based on collaborative filtering
-    static std::vector<int> recommendVideos(int userID, const std::map<int, std::vector<int>>& userToVideos);
+    static std::vector<std::string> recommendVideos(const std::string& userID, const std::map<std::string, std::vector<std::string>>& userToVideos);
 };
 
 #endif
