@@ -24,4 +24,4 @@ You can find the related repositories here:
 
 - [Android Application Repository (Part 3)](https://github.com/amitkarol/AndroidYTPart3.git)
 - [Web Application Repository (Part 2)](https://github.com/maayanzahavi/WebPart2.git)
-- **Pay attention that the branches are mainPart4**
+- **Note**: The relevant branches for the server integration and functionality are under **mainPart4**.
