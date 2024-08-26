@@ -12,7 +12,9 @@ bool Database::loadFromFile(const std::string& filename) {
     }
 
     std::string line;
-    while (getline(file, line)) {
+
+    // Load userToVideos
+    while (getline(file, line) && !line.empty()) {
         std::stringstream ss(line);
         std::string userID;
         char colon;
@@ -24,7 +26,53 @@ bool Database::loadFromFile(const std::string& filename) {
             videos.push_back(videoID);
         }
 
-        userToVideos[userID] = videos;
+        // Ensure userID is parsed correctly
+        if (!userID.empty()) {
+            userToVideos[userID] = videos;
+            std::cout << "Loaded user: " << userID << " with videos: ";
+            for (const auto& vid : videos) {
+                std::cout << vid << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    // Load videoToUsers
+    while (getline(file, line) && !line.empty()) {
+        std::stringstream ss(line);
+        std::string videoID;
+        char colon;
+        ss >> videoID >> colon;
+
+        std::vector<std::string> users;
+        std::string userID;
+        while (getline(ss, userID, ',')) {  // Read user IDs separated by commas
+            users.push_back(userID);
+        }
+
+        // Ensure videoID is parsed correctly
+        if (!videoID.empty()) {
+            videoToUsers[videoID] = users;
+            std::cout << "Loaded video: " << videoID << " with users: ";
+            for (const auto& user : users) {
+                std::cout << user << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    // Load frequencyList
+    while (getline(file, line) && !line.empty()) {
+        std::stringstream ss(line);
+        std::string videoID;
+        int frequency;
+        ss >> videoID >> frequency;
+
+        // Ensure videoID and frequency are parsed correctly
+        if (!videoID.empty()) {
+            frequencyList[videoID] = frequency;
+            std::cout << "Loaded video: " << videoID << " with frequency: " << frequency << std::endl;
+        }
     }
 
     file.close();
@@ -39,6 +87,7 @@ bool Database::saveToFile(const std::string& filename) {
         return false;
     }
 
+    // Save userToVideos
     for (const auto& pair : userToVideos) {
         file << pair.first << ":";
         for (size_t i = 0; i < pair.second.size(); ++i) {
@@ -48,13 +97,46 @@ bool Database::saveToFile(const std::string& filename) {
         file << "\n";
     }
 
+    // Separate sections
+    file << "\n";
+
+    // Save videoToUsers
+    for (const auto& pair : videoToUsers) {
+        file << pair.first << ":";
+        for (size_t i = 0; i < pair.second.size(); ++i) {
+            file << pair.second[i];
+            if (i < pair.second.size() - 1) file << ",";  // Comma-separate user IDs
+        }
+        file << "\n";
+    }
+
+    // Separate sections
+    file << "\n";
+
+    // Save frequencyList
+    for (const auto& pair : frequencyList) {
+        file << pair.first << " " << pair.second << "\n";
+    }
+
     file.close();
     return true;
 }
 
-// Add a user-to-video mapping
+// Add a user-to-video mapping and update related data structures
 void Database::addMapping(const std::string& userID, const std::string& videoID) {
+    // Update userToVideos
     userToVideos[userID].push_back(videoID);
+
+    // Update videoToUsers
+    videoToUsers[videoID].push_back(userID);
+
+    // Update frequencyList
+    frequencyList[videoID]++;
+
+    // Save the updated database to the file after every update
+    if (!saveToFile("data/storage.txt")) {
+        std::cerr << "Error saving data to file after update." << std::endl;
+    }
 }
 
 // Get videos watched by a user
@@ -69,4 +151,14 @@ std::vector<std::string> Database::getVideosForUser(const std::string& userID) {
 // Expose the user-to-videos map
 const std::map<std::string, std::vector<std::string>>& Database::getUserToVideos() const {
     return userToVideos;
+}
+
+// Expose the video-to-users map
+const std::map<std::string, std::vector<std::string>>& Database::getVideoToUsers() const {
+    return videoToUsers;
+}
+
+// Expose the frequency list
+const std::map<std::string, int>& Database::getFrequencyList() const {
+    return frequencyList;
 }
