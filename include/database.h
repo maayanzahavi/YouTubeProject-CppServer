@@ -14,16 +14,16 @@ public:
     bool saveToFile(const std::string& filename);
 
     // Add a mapping from a user to a video
-    void addMapping(int userID, int videoID);
+    void addMapping(const std::string& userID, const std::string& videoID);
 
     // Get the videos watched by a user
-    std::vector<int> getVideosForUser(int userID);
+    std::vector<std::string> getVideosForUser(const std::string& userID);
 
     // Expose the user-to-videos map
-    const std::map<int, std::vector<int>>& getUserToVideos() const;
+    const std::map<std::string, std::vector<std::string>>& getUserToVideos() const;
 
 private:
-    std::map<int, std::vector<int>> userToVideos;  // Mapping of userID to list of videoIDs
+    std::map<std::string, std::vector<std::string>> userToVideos;  // Mapping of userID to list of videoIDs
 };
 
 #endif

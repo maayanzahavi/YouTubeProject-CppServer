@@ -1,4 +1,4 @@
-#include "database.h"
+#include "../include/database.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -14,15 +14,14 @@ bool Database::loadFromFile(const std::string& filename) {
     std::string line;
     while (getline(file, line)) {
         std::stringstream ss(line);
-        int userID;
+        std::string userID;
         char colon;
         ss >> userID >> colon;
 
-        std::vector<int> videos;
-        int videoID;
-        while (ss >> videoID) {
+        std::vector<std::string> videos;
+        std::string videoID;
+        while (getline(ss, videoID, ',')) {  // Read video IDs separated by commas
             videos.push_back(videoID);
-            if (ss.peek() == ',') ss.ignore();  // Ignore commas between video IDs
         }
 
         userToVideos[userID] = videos;
@@ -54,20 +53,20 @@ bool Database::saveToFile(const std::string& filename) {
 }
 
 // Add a user-to-video mapping
-void Database::addMapping(int userID, int videoID) {
+void Database::addMapping(const std::string& userID, const std::string& videoID) {
     userToVideos[userID].push_back(videoID);
 }
 
 // Get videos watched by a user
-std::vector<int> Database::getVideosForUser(int userID) {
+std::vector<std::string> Database::getVideosForUser(const std::string& userID) {
     if (userToVideos.find(userID) != userToVideos.end()) {
         return userToVideos[userID];
     } else {
-        return std::vector<int>();  // Return empty vector if userID not found
+        return std::vector<std::string>();  // Return empty vector if userID not found
     }
 }
 
 // Expose the user-to-videos map
-const std::map<int, std::vector<int>>& Database::getUserToVideos() const {
+const std::map<std::string, std::vector<std::string>>& Database::getUserToVideos() const {
     return userToVideos;
 }

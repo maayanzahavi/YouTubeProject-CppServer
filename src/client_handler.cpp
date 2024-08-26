@@ -1,6 +1,6 @@
-#include "client_handler.h"
-#include "database.h"
-#include "recommendation.h"
+#include "../include/client_handler.h"
+#include "../include/database.h"
+#include "../include/recommendation.h"
 #include <iostream>
 #include <unistd.h>
 #include <sys/socket.h>
@@ -23,46 +23,52 @@ void ClientHandler::handle_client(int client_sock) {
             perror("Error receiving data");
             break;
         } else {
-            // Successfully received data, parse it
             buffer[read_bytes] = '\0';  // Null-terminate the received string
             cout << "Received from client: " << buffer << endl;
 
             string received_message(buffer);
 
             if (received_message.find("recommend:") == 0) {
-                // Handle recommendation request, format: "recommend:userID"
-                int userID;
-                stringstream ss(received_message.substr(10));  // Skip "recommend:"
-                ss >> userID;
+                // Extract the userID as a string
+                string userID = received_message.substr(10);  // Skip "recommend:"
 
                 // Generate recommendations for the user
-                vector<int> recommendations = Recommendation::recommendVideos(userID, db.getUserToVideos());
+                vector<string> recommendations = Recommendation::recommendVideos(userID, db.getUserToVideos());
 
-                // Convert the list of recommended videos to a comma-separated string
-                stringstream recommendations_stream;
-                for (size_t i = 0; i < recommendations.size(); ++i) {
-                    recommendations_stream << recommendations[i];
-                    if (i < recommendations.size() - 1) {
-                        recommendations_stream << ",";
+                if (recommendations.empty()) {
+                    // If no recommendations, send an empty array
+                    string empty_response = "[]";
+                    send(client_sock, empty_response.c_str(), empty_response.size(), 0);
+                    cout << "Sent empty recommendations to client." << endl;
+                } else {
+                    // Convert the list of recommended videos to a comma-separated string
+                    stringstream recommendations_stream;
+                    for (size_t i = 0; i < recommendations.size(); ++i) {
+                        recommendations_stream << recommendations[i];
+                        if (i < recommendations.size() - 1) {
+                            recommendations_stream << ",";
+                        }
                     }
-                }
-                string recommendations_str = recommendations_stream.str();
+                    string recommendations_str = recommendations_stream.str();
 
-                // Send the list of recommended videos back to the client
-                send(client_sock, recommendations_str.c_str(), recommendations_str.size(), 0);
-                cout << "Sent recommendations to client: " << recommendations_str << endl;
+                    // Send the list of recommended videos back to the client
+                    send(client_sock, recommendations_str.c_str(), recommendations_str.size(), 0);
+                    cout << "Sent recommendations to client: " << recommendations_str << endl;
+                }
             } else if (received_message.find(":") != string::npos) {
-                // Handle userID:videoID update
-                int userID, videoID;
-                stringstream ss(received_message);
-                char colon;
-                if (ss >> userID >> colon >> videoID && colon == ':') {
+                // Split the message into userID and videoID based on the colon
+                size_t colon_pos = received_message.find(":");
+                string userID = received_message.substr(0, colon_pos);  // Extract the userID
+                string videoID = received_message.substr(colon_pos + 1);  // Extract the videoID
+
+                if (!userID.empty() && !videoID.empty()) {
+                    cout << "UserID " << userID << " videoID " << videoID << endl;
                     // Update the in-memory database with the userID and videoID
                     db.addMapping(userID, videoID);
                     cout << "Updated database: User " << userID << " watched video " << videoID << endl;
 
                     // Send acknowledgment to the client
-                    string ack_message = "Update received for user " + to_string(userID) + " and video " + to_string(videoID);
+                    string ack_message = "Update received for user " + userID + " and video " + videoID;
                     send(client_sock, ack_message.c_str(), ack_message.size(), 0);
                 } else {
                     // Invalid format, send error message
