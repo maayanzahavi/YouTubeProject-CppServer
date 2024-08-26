@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <algorithm> // for std::find
 
 // Load data from file
 bool Database::loadFromFile(const std::string& filename) {
@@ -124,11 +125,15 @@ bool Database::saveToFile(const std::string& filename) {
 
 // Add a user-to-video mapping and update related data structures
 void Database::addMapping(const std::string& userID, const std::string& videoID) {
-    // Update userToVideos
-    userToVideos[userID].push_back(videoID);
+    // Update userToVideos only if the video is not already in the user's list
+    if (std::find(userToVideos[userID].begin(), userToVideos[userID].end(), videoID) == userToVideos[userID].end()) {
+        userToVideos[userID].push_back(videoID);
+    }
 
-    // Update videoToUsers
-    videoToUsers[videoID].push_back(userID);
+    // Update videoToUsers only if the user is not already in the video's list
+    if (std::find(videoToUsers[videoID].begin(), videoToUsers[videoID].end(), userID) == videoToUsers[videoID].end()) {
+        videoToUsers[videoID].push_back(userID);
+    }
 
     // Update frequencyList
     frequencyList[videoID]++;
