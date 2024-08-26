@@ -9,7 +9,7 @@ int main() {
 
     // Start the server
     Server server;
-    server.start(5555);
+    server.start(5556);
 
     // Save the database to file before shutting down
     db.saveToFile("data/storage.txt");

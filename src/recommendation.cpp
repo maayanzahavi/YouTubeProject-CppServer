@@ -9,7 +9,7 @@ std::vector<std::string> Recommendation::recommendVideos(const std::string& user
     auto userIt = userToVideos.find(userID);
     if (userIt == userToVideos.end()) {
         std::cerr << "User ID " << userID << " not found in the database." << std::endl;
-        return {};  // Return an empty vector if the user is not found
+        return {};  
     }
 
     std::unordered_map<std::string, int> videoFrequency;  // To count how many similar users watched each video
