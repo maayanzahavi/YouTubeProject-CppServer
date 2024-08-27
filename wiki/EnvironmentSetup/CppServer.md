@@ -1,7 +1,7 @@
 # C++ Server
 
 ## Relevant riposetory
-Find the C++ server repository [here](https://github.com/maayanzahavi/YouTubeCppServer.git).
+Find the C++ server repository [here](https://github.com/maayanzahavi/YouTubeCppServer.git) under branch `main`.
 
 ## Run the Server
 1. Clone the repository to your local machine.
@@ -9,14 +9,6 @@ Find the C++ server repository [here](https://github.com/maayanzahavi/YouTubeCpp
 3. Execute the following command to start the server:
    ```bash
    ./server
-
-## Repository Links
-
-You can find the related repositories here:
-
-- [Android Application Repository (Part 3)](https://github.com/amitkarol/AndroidYTPart3.git)
-- [Web Application Repository (Part 2)](https://github.com/maayanzahavi/WebPart2.git)
-- **Note**: The relevant branches for the server integration and functionality are under **mainPart4**.
 
 # Recommendation Algorithm
 
