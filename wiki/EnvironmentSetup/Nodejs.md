@@ -23,7 +23,7 @@
   ```bash
   CONNECTION_STRING="mongodb://localhost:27017/YouTube_101"
   PORT=8200
-  TCP_SERVER_PORT=5555
+  TCP_SERVER_PORT=5556
   TCP_SERVER_IP=127.0.0.1
   ```
 
