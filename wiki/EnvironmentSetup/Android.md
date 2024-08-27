@@ -15,7 +15,7 @@ You can find the relevant repository [here](https://github.com/amitkarol/Android
 1. Clone the relevant repository to Android Studio
 2. Ensure your Android device is connected, or start an emulator.
 3. Configure the Base URL (detailed below).
-4. Run the project by clicking the Run button in Android Studio.
+4. Run the project by clicking the run button in Android Studio.
 
 ## Configuring the Base URL
 
