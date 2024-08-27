@@ -7,8 +7,8 @@ You can find the relevant repository [here](https://github.com/amitkarol/Android
 
 ### Run the relevant beckend servers
 
-1. Make sure your Node js server is up and running by following [this link](https://github.com/maayanzahavi/WebPart2.git) (relevant branch `mainPart4`).
-2. Make sure your C++ server is up and running by following [this link](https://github.com/maayanzahavi/YouTubeCppServer.git) (relevant branch `main`).
+1. Make sure your Node js server is up and running (see [here](./Nodejs.md)).
+2. Make sure your C++ server is up and running (see [here](./CppServer.md)).
 
 ### Run the Android Application
 
