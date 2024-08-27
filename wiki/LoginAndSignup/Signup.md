@@ -28,4 +28,4 @@ The following images illustrate the SignUp screen on the web application:
   ![SignUp - Enter Password](../images/signUpWebPassword.png)
 
 - Enter DisplayName:
- ![SignUp - Enter Password](../images/signUpWebDisplayName.png)
+ ![SignUp - Enter Password](../images/SignUpWebDisplayName.png)
