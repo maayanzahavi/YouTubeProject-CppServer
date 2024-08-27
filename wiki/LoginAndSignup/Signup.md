@@ -19,7 +19,7 @@ The following images illustrate the SignUp screen in the Android application:
 The following images illustrate the SignUp screen on the web application:
 
 - Enter Full Name:
-  ![SignUp - Enter Email](../images/signUpWebName.png)
+  ![SignUp - Enter Name](../images/signUpWebName.png)
 
 - Enter UserName:
   ![SignUp - Enter Email](../images/signUpWebEmail.png)
