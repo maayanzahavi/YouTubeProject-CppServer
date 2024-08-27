@@ -13,11 +13,15 @@
   ```bash
   CONNECTION_STRING="{your_mongoDB_connection_string}/YouTube_101"
   PORT={port_number}
+  TCP_SERVER_PORT={cpp_server_port_numer}
+  TCP_SERVER_IP=127.0.0.1
   ```
   For example:
   ```bash
   CONNECTION_STRING="mongodb://localhost:27017/YouTube_101"
   PORT=8200
+  TCP_SERVER_PORT=5555
+  TCP_SERVER_IP=127.0.0.1
   ```
 
 * Open MongoDB on your computer.
