@@ -1,5 +1,5 @@
 
-# Upload of the Video in the Android
+## Android Video Upload
 
 The following image illustrates the process of uploading a video in the Android application:
 
@@ -14,7 +14,7 @@ After the upload is complete, the video is displayed on the homepage of the Andr
 <img src="../images/upload3Android.png" alt="Video in HomePage" width="400"/>
 
 
-# Upload of the Video on the Web
+## Web Video Upload
 
 The image below demonstrates the process of uploading a video on the web application:
 
