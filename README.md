@@ -10,15 +10,6 @@ To run the C++ server, follow these steps:
    ```bash
    ./server
    
-## Work Distribution
-
-We approached this project collaboratively, working together on each part of the development process:
-
-- **Recommendation Algorithm**: We began by understanding how the recommendation algorithm works. This was crucial for the server's functionality, ensuring it can provide accurate video recommendations.
-- **Server Creation**: After understanding the algorithm, we designed and developed the C++ server. We applied knowledge from the lectures to decide on the structure and how to implement the necessary code.
-- **API Integration**: Once the server was up and running, we integrated its functionality with the React frontend and the Android application. This included creating the necessary API requests to fetch recommended videos and ensuring smooth communication between the server and the clients.
-- **Testing and Validation**: Finally, we thoroughly tested the server by running it in both the React frontend and the Android application. We verified that the server returns the correct recommended videos, ensuring everything works as expected.
-
 ## Recommendation Algorithm
 
 The recommendation algorithm implemented in this project is designed to suggest videos to users based on their viewing history. The algorithm primarily operates in the following steps:
@@ -69,6 +60,15 @@ The server listens on a specified port for incoming connections. For each client
 ### Conclusion
 
 This recommendation system is a basic collaborative filtering algorithm that leverages user similarity to suggest content. While simple, it provides a solid foundation that can be extended with more sophisticated techniques, such as content-based filtering or matrix factorization.
+
+## Work Distribution
+
+We approached this project collaboratively, working together on each part of the development process:
+
+- **Recommendation Algorithm**: We began by understanding how the recommendation algorithm works. This was crucial for the server's functionality, ensuring it can provide accurate video recommendations.
+- **Server Creation**: After understanding the algorithm, we designed and developed the C++ server. We applied knowledge from the lectures to decide on the structure and how to implement the necessary code.
+- **API Integration**: Once the server was up and running, we integrated its functionality with the React frontend and the Android application. This included creating the necessary API requests to fetch recommended videos and ensuring smooth communication between the server and the clients.
+- **Testing and Validation**: Finally, we thoroughly tested the server by running it in both the React frontend and the Android application. We verified that the server returns the correct recommended videos, ensuring everything works as expected.
 
 ## Repository Links
 
