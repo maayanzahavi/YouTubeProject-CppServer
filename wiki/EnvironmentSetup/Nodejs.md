@@ -30,5 +30,3 @@
 ## See the web application
 * Run the server using __npm start__ (if you're using unix, run __npm run startUnix__ instead).
 * On your browser search for: http://localhost:{port_number} (the same port number you chose earlier).
-## Relevant repository
-the React application is available [here](https://github.com/maayanzahavi/WebPart2-React.git) under branch __`mainPart4`__.
