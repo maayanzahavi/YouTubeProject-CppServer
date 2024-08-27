@@ -1,7 +1,7 @@
 # Node js
 
 ## Relevant repotitory
- The Nodejs serve can be found [here](https://github.com/maayanzahavi/WebPart2.git) under branch `mainPart4`.
+ The Nodejs server can be found [here](https://github.com/maayanzahavi/WebPart2.git) under branch `mainPart4`.
 
 ## Run the server
 1. Clone the relevant repository to your computer.
@@ -29,6 +29,6 @@
 * Open MongoDB on your computer.
 * __Note__ that a JavaScript script will automatically run and initialize a __YouTube_101__ database when you run the server. Please make sure you don't have a DB with that called __YouTube_101__.
 
-## See the web application
+## Srart the web application
 * Run the server using __npm start__ (if you're using unix, run __npm run startUnix__ instead).
 * On your browser search for: http://localhost:{port_number} (the same port number you chose earlier).
