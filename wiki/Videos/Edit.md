@@ -2,7 +2,7 @@
 
 The following image illustrates the Edit and Delete Video screen in the Android application:
 
-![Edit Video in Android](../images/EditAndroid.png)
+<img src="../images/EditAndroid.png" alt="Edit Video in Android" width="400"/>
 
 # Edit Video Screen on the Web
 

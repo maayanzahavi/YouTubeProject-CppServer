@@ -1,12 +1,18 @@
+
 # Upload of the Video in the Android
 
 The following image illustrates the process of uploading a video in the Android application:
 
-![Upload in Android - Step 1](../images/uploadAndroid.png)
+<img src="../images/uploadAndroid.png" alt="Upload in Android - Step 1" width="400"/>
 
 After this step, the next phase in the Android video upload process is shown below:
 
-![Upload in Android - Step 2](../images/Upload2Android.png)
+<img src="../images/Upload2Android.png" alt="Upload in Android - Step 2" width="400"/>
+
+After the upload is complete, the video is displayed on the homepage of the Android application:
+
+<img src="../images/upload3Android.png" alt="Video in HomePage" width="400"/>
+
 
 After the upload is complete, the video is displayed on the homepage of the Android application:
 

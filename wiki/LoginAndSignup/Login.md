@@ -9,7 +9,7 @@ The following image illustrates the Login screen in the Android application:
 The following images illustrate the Login screen on the web application:
 
 - Enter Email:
-  <img src="../images/signInWebEmail.png" alt="Login - Enter Email" width="400"/>
+  ![Login - Enter Email](../images/signInWebEmail.png)
 
 - Enter Password:
-  <img src="../images/signInWebPassword.png" alt="Login - Enter Password" width="400"/>
+  ![Login - Enter Password](../images/signInWebPassword.png)

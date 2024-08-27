@@ -2,7 +2,7 @@
 
 The following image illustrates the Watching Video screen in the Android application:
 
-![Watching Video in Android](../images/watchAndroid.png)
+<img src="../images/watchAndroid.png" alt="Watching Video in Android" width="400"/>
 
 # Watching Video Screen on the Web
 

@@ -3,16 +3,16 @@
 The following images illustrate the SignUp screen in the Android application:
 
 - Enter Full Name:
-  ![SignUp - Enter Name](../images/signUpAnroidName.png)
+  <img src="../images/signUpAnroidName.png" alt="SignUp - Enter Name" width="400"/>
 
 - Enter Username:
-  ![SignUp - Enter Username](../images/signUpAndroidUsername.png)
+  <img src="../images/signUpAndroidUsername.png" alt="SignUp - Enter Username" width="400"/>
 
 - Enter Password:
-  ![SignUp - Enter Password](../images/signUpAndroidPassword.png)
+  <img src="../images/signUpAndroidPassword.png" alt="SignUp - Enter Password" width="400"/>
 
 - Enter Display Name:
-  ![SignUp - Enter Display Name](../images/signUpAndroidDisplayName.png)
+  <img src="../images/signUpAndroidDisplayName.png" alt="SignUp - Enter Display Name" width="400"/>
 
 # SignUp Screen on the Web
 
