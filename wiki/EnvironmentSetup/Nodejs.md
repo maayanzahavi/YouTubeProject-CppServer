@@ -4,9 +4,10 @@
  The Node js server can be found [here](https://github.com/maayanzahavi/WebPart2.git) under branch `mainPart4`.
 
 ## Run the server
-1. Clone the relevant repository to your computer.
-2. Open terminal in the cloned folder.
-3. Run __npm install__ to install dependencies.
+1. Make sure the C++ server is up and rinning. You can find instructions [here](./CppServer.md)
+2. Clone the relevant repository to your computer.
+3. Open terminal in the cloned folder.
+4. Run __npm install__ to install dependencies.
 
 ## Create a config folder
 1. Create a new folder in the repository named __config__.
