@@ -1,4 +1,4 @@
-# Android SignUp Screen
+## Android SignUp Screen
 
 The following images illustrate the SignUp screen in the Android application:
 
@@ -14,7 +14,7 @@ The following images illustrate the SignUp screen in the Android application:
 - Enter Display Name:
   <img src="../images/signUpAndroidDisplayName.png" alt="SignUp - Enter Display Name" width="400"/>
 
-# Web SignUp Screen
+## Web SignUp Screen
 
 The following images illustrate the SignUp screen on the web application:
 
