@@ -49,7 +49,7 @@ The core of the recommendation algorithm is implemented in the `Recommendation::
 The algorithm relies on a `Database` class that stores the following mappings:
 - **User to Videos**: A map that tracks which videos each user has watched.
 - **Video to Users**: A map that tracks which users have watched each video.
-- **Video Frequency List**: A map that counts how many times each video has been watched across all users.
+- **Video Frequency List**: A map that counts how many 'similar users' have watched each video.
 
 ### Data Persistence
 - The `Database` class is capable of loading from and saving to a file (`storage.txt`). This ensures that the user's watch history and video frequencies are preserved across server restarts.
