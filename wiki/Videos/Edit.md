@@ -1,6 +1,6 @@
 # Edit Video Screen in the Android
 
-The following image illustrates the Edit Video screen in the Android application:
+The following image illustrates the Edit and Delete Video screen in the Android application:
 
 ![Edit Video in Android](../images/EditAndroid.png)
 
