@@ -1,7 +1,7 @@
 # Node js
 
 ## Relevant repotitory
- The Nodejs server can be found [here](https://github.com/maayanzahavi/WebPart2.git) under branch `mainPart4`.
+ The Node js server can be found [here](https://github.com/maayanzahavi/WebPart2.git) under branch `mainPart4`.
 
 ## Run the server
 1. Clone the relevant repository to your computer.
