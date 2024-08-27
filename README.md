@@ -1,12 +1,11 @@
 # C++ Server
 
-## How to Run the Server
+## Run the Server
 
-To run the C++ server, follow these steps:
-
-1. **Clone the Repository**: Clone the repository to your local machine.
-2. **Navigate to the Server Directory**: Open a terminal in the cloned folder.
-3. **Run the Server**: Execute the following command to start the server:
+1. Clone the repository to your local machine.
+2. Open a terminal in the cloned folder.
+3. In `src/main.cpp`, change the server port number if needed.
+4. Execute the following command to start the server:
    ```bash
    ./server
    
