@@ -1,9 +1,9 @@
 # C++ Server
 
-## How to Run the Server
+## Relevant riposetory
+Find the C++ server repository [here](https://github.com/maayanzahavi/YouTubeCppServer.git).
 
-To run the C++ server, follow these steps:
-
+## Run the Server
 1. **Clone the Repository**: Clone the repository to your local machine.
 2. **Navigate to the Server Directory**: Open a terminal in the cloned folder.
 3. **Run the Server**: Execute the following command to start the server:
