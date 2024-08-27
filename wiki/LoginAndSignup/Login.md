@@ -1,10 +1,10 @@
-# Login Screen in the Android
+# Android Login Screen
 
 The following image illustrates the Login screen in the Android application:
 
 <img src="../images/loginAndroid.png" alt="Login in Android" width="400"/>
 
-# Login Screen on the Web
+# Web Login Screen
 
 The following images illustrate the Login screen on the web application:
 
