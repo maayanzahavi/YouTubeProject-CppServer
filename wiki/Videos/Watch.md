@@ -1,10 +1,10 @@
-# Watching Video Screen in the Android
+## Android Video Watching
 
 The following image illustrates the Watching Video screen in the Android application:
 
 <img src="../images/watchAndroid.png" alt="Watching Video in Android" width="400"/>
 
-# Watching Video Screen on the Web
+## Web Video Watching
 
 The image below demonstrates the Watching Video screen on the web application:
 
