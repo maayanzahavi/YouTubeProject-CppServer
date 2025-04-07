@@ -73,6 +73,6 @@ We approached this project collaboratively, working together on each part of the
 
 You can find the related repositories here:
 
-- [Android Application Repository (Part 3)](https://github.com/amitkarol/AndroidYTPart3.git)
-- [Web Application Repository (Part 2)](https://github.com/maayanzahavi/WebPart2.git)
+- [Android Application Repository (Part 3)](https://github.com/amitkarol/YouTubeProject-Android.git)
+- [Web Application Repository (Part 2)](https://github.com/maayanzahavi/YouTubeProject-Server.git)
 - **Note**: The relevant branches for the server integration and functionality are under **mainPart4**.
